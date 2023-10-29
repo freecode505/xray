@@ -331,6 +331,11 @@ cat > /etc/xray/config.json << END
         "protocol": [
           "bittorrent"
         ]
+      },
+      {
+        "type": "field",
+        "outboundTag": "blocked",
+        "port": [6881, 65535]
       }
     ]
   },
@@ -544,6 +549,17 @@ systemctl enable vnstat
 /etc/init.d/vnstat restart
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
+sed -i -e 's/b8458948-a630-4e6d-809a-230b2223ff3d/f8dc8058-73c0-11ee-b962-0242ac120002/g' /etc/xray/config.json
+sed -i -e 's/Listen 80/Listen 81/g' /etc/apache2/ports.conf
+sed -i -e 's/<VirtualHost *:80>/<VirtualHost *:81>/g' /etc/apache2/sites-enabled/000-default.conf
+systemctl restart apache2
+netstat -tlpn| grep apache
+systemctl enable xray
+systemctl restart xray
+systemctl restart nginx
+systemctl enable runn
+systemctl restart runn
+apt install nload
 
 #done
 clear
