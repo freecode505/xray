@@ -30,8 +30,6 @@ echo "IP=" >> /var/lib/crot/ipvps.conf
 echo "IP=" >> /var/lib/akbarstorevpn/ipvps.conf
 cd
 #
-# Add Domain
-wget https://raw.githubusercontent.com/lizsvr/XRAY-MULTI/main/updated/adddomain.sh && chmod +x adddomain.sh && ./adddomain.sh
 #
 #install tools/alat
 wget https://raw.githubusercontent.com/lizsvr/XRAY-MULTI/main/install-tools.sh && chmod +x install-tools.sh && ./install-tools.sh
@@ -55,7 +53,6 @@ if [[ "$IP" = "" ]]; then
 	rm -rf setup.sh
 	rm -rf install-xray.sh
 	rm -rf install-tools.sh
-	rm -rf adddomain.sh
 	echo " Reboot 15 Sec"
 	sleep 15
 	reboot
@@ -109,7 +106,6 @@ else
 	rm -rf setup.sh
 	rm -rf install-xray.sh
 	rm -rf install-tools.sh
-	rm -rf adddomain.sh
 	sleep 1
 	reboot
 fi

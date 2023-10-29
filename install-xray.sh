@@ -107,7 +107,7 @@ echo "0 5 * * * root xp && reboot" >> /etc/crontab
 # set uuid
 uuid9=$(cat /proc/sys/kernel/random/uuid)
 
-uuid=b8458948-a630-4e6d-809a-230b2223ff3d
+uuid=f8dc8058-73c0-11ee-b962-0242ac120002
 
 # xray config
 cat > /etc/xray/config.json << END
@@ -549,7 +549,6 @@ systemctl enable vnstat
 /etc/init.d/vnstat restart
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
-sed -i -e 's/b8458948-a630-4e6d-809a-230b2223ff3d/f8dc8058-73c0-11ee-b962-0242ac120002/g' /etc/xray/config.json
 sed -i -e 's/Listen 80/Listen 81/g' /etc/apache2/ports.conf
 sed -i -e 's/<VirtualHost *:80>/<VirtualHost *:81>/g' /etc/apache2/sites-enabled/000-default.conf
 systemctl restart apache2
