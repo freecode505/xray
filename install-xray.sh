@@ -335,7 +335,7 @@ cat > /etc/xray/config.json << END
       {
         "type": "field",
         "outboundTag": "blocked",
-        "port": [6881, 65535]
+        "port": "6881-65535"
       }
     ]
   },
@@ -376,8 +376,8 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/xray run -config /etc/xray/config.json
 Restart=on-failure
 RestartPreventExitStatus=23
-LimitNPROC=10000
-LimitNOFILE=1000000
+LimitNPROC=infinity
+LimitNOFILE=infinity
 
 [Install]
 WantedBy=multi-user.target
