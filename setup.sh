@@ -34,7 +34,7 @@ cd
 wget https://raw.githubusercontent.com/lizsvr/XRAY-MULTI/main/updated/adddomain.sh && chmod +x adddomain.sh && ./adddomain.sh
 #
 #install tools/alat
-wget https://raw.githubusercontent.com/lizsvr/XRAY-MULTI/main/install-tools.sh && chmod +x install-tools.sh && ./install-tools.sh
+wget https://raw.githubusercontent.com/testingnic/xray/main/install-tools.sh && chmod +x install-tools.sh && ./install-tools.sh
 #
 #Instal Xray
 wget https://raw.githubusercontent.com/testingnic/xray/main/install-xray.sh && chmod +x install-xray.sh && ./install-xray.sh
